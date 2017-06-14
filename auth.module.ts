@@ -4,7 +4,7 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {AuthService} from './services/auth.service';
-import {AdminGuard} from './guards/admin.guard';
+import {AdminGuard} from './guards/admin-role.guard';
 import {LoggedInGuard} from './guards/logged-in.guard';
 import {LoggedOutGuard} from './guards/logged-out.guard';
 

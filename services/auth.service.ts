@@ -27,7 +27,6 @@ export class AuthService {
 
     haveRole(uid, role) {
         return this.afDb.list(`/users/roles/${uid}`).map((array) => {
-            console.log('roles', array, role);
             let found = false;
             array.map((elem) => {
                 if (elem.$value === role) {
