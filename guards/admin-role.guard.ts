@@ -10,7 +10,7 @@ import {AngularFireAuth} from 'angularfire2/auth';
 import 'rxjs/Rx';
 
 @Injectable()
-export class AdminGuard implements CanActivate {
+export class AdminRoleGuard implements CanActivate {
     constructor(private auth: AuthService, private afAuth: AngularFireAuth, private router: Router) {
     }
 
