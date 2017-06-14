@@ -12,7 +12,7 @@ import {LoggedOutGuard} from './guards/logged-out.guard';
     imports: [CommonModule],
     declarations: [
     ],
-    exports: [AuthService, AdminGuard, LoggedInGuard, LoggedOutGuard]
+    exports: [AdminGuard, LoggedInGuard, LoggedOutGuard]
 })
 export class AuthModule {
     static forRoot(): ModuleWithProviders {
