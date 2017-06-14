@@ -12,13 +12,13 @@ import {LoggedOutGuard} from './guards/logged-out.guard';
     imports: [CommonModule],
     declarations: [
     ],
-    exports: [AdminGuard, LoggedInGuard, LoggedOutGuard]
+    exports: []
 })
 export class AuthModule {
     static forRoot(): ModuleWithProviders {
         return {
             ngModule: AuthModule,
-            providers: [AuthService]
+            providers: [AuthService, AdminGuard, LoggedInGuard, LoggedOutGuard]
         }
     }
 }
