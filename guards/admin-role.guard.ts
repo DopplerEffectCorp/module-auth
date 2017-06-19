@@ -18,7 +18,6 @@ export class AdminRoleGuard implements CanActivate {
         return this.afAuth.authState.switchMap((auth) => {
             return this.auth.haveRole(auth.uid, 'admin');
         }).map((gotRole) => {
-            console.log('gotRile', gotRole)
             if (!gotRole) {
                 this.router.navigate(['/unauthorized']);
             }

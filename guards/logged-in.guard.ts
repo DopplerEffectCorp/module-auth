@@ -17,8 +17,10 @@ export class LoggedInGuard implements CanActivate {
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
         return this.afAuth.authState.map((auth) => {
+            if (!auth) {
+                this.router.navigate(['/login']);
+            }
             return auth != null;
         }).first();
-        // Observable.of(true);
     }
 }
