@@ -1,6 +1,6 @@
 import {
     EventEmitter,
-    Injectable
+    Injectable,
 } from '@angular/core';
 
 import {AngularFireDatabase} from 'angularfire2/database';
