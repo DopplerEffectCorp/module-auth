@@ -15,6 +15,9 @@
 ]
 ```
 
+#### App.Module
+`AuthModule.forRoot()`
+
 #### Routes
 
 > You have to create these routes
