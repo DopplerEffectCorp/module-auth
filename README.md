@@ -1,4 +1,4 @@
-# module-auth
+# Authentication Module 
 
 ## Requirement
 
