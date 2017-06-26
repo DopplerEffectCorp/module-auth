@@ -25,6 +25,10 @@ export class AuthService {
         });
     }
 
+    signIn(email, password) {
+      return this.afAuth.auth.createUserWithEmailAndPassword(email, password);
+    }
+
     haveRole(uid, role) {
         return this.afDb.list(`/users/roles/${uid}`).map((array) => {
             let found = false;
