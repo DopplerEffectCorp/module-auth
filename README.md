@@ -4,7 +4,7 @@
 
 #### Database
 
-> You must have this structure for admin role
+> **You must have this structure for admin role**
 ```
 /users/roles/${totoId}
 
@@ -14,13 +14,13 @@
     randomId3 : 'what-else'
 ]
 ```
-
 #### App.Module
-`AuthModule.forRoot()`
+
+`AuthModule.forRoot()` ⚠️ Don't forget the forRoot()
 
 #### Routes
 
-> You have to create these routes
+> **You have to create these routes**
     
 **/login** (when need to login)
 
