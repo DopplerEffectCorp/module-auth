@@ -14,15 +14,18 @@ export class AuthService {
     authChanged: EventEmitter<any> = new EventEmitter();
 
     constructor(private afDb: AngularFireDatabase, private afAuth: AngularFireAuth, private router: Router) {
-        afAuth.authState.subscribe((user) => {
-            this.authChanged.emit(user);
-            if (user) {
-                this.user = user;
-            } else {
-                this.user = null;
-                this.router.navigate(['login']);
-            }
-        });
+
+    }
+
+    watchAuthState(callback) {
+      this.afAuth.authState.subscribe((user) => {
+        this.authChanged.emit(user);
+        callback(user);
+      });
+    }
+
+    signIn(email, password) {
+      return this.afAuth.auth.createUserWithEmailAndPassword(email, password);
     }
 
     haveRole(uid, role) {
