@@ -1,12 +1,32 @@
-# module-auth
+# Authentication Module 
 
-# Requirement
-* Database
-    * `/users/roles/${uid}` = {firebaseid: 'admin', firebaseid2: 'super-admin'}
-* Routes
-    * /login (when need to login)
-    * /unauthorized (when unauthorized to access some route)
-# Available Guards
-* LoggedInGuard
-* LoggedOutGuard
-* AdminRoleGuard
+## Requirement
+
+#### Database
+
+> **You must have this structure for admin role**
+```
+/users/roles/${totoId}
+
+[
+    randomId: 'admin',
+    randomId2: 'super-admin'
+    randomId3 : 'what-else'
+]
+```
+#### App.Module
+
+`AuthModule.forRoot()` ⚠️ Don't forget the forRoot()
+
+#### Routes
+
+> **You have to create these routes**
+    
+**/login** (when need to login)
+
+**/unauthorized** (when unauthorized to access some route)
+     
+## Available Guards
+1. LoggedInGuard
+2. LoggedOutGuard
+3. AdminRoleGuard
