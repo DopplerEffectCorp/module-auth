@@ -7,6 +7,7 @@ import {AngularFireDatabase} from 'angularfire2/database';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {Router} from '@angular/router';
 import {User} from 'firebase/app';
+import * as firebase from 'firebase';
 
 @Injectable()
 export class AuthService {
@@ -58,5 +59,9 @@ export class AuthService {
         return this.afAuth.auth.signOut().then(() => {
             return this.router.navigate(['/login']);
         });
+    }
+
+    resetPassword(email){
+     return firebase.auth().sendPasswordResetEmail(email);
     }
 }
