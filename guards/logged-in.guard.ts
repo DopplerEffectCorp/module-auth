@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {
     ActivatedRouteSnapshot,
-    CanActivate,
+    CanActivate, CanActivateChild,
     Router,
     RouterStateSnapshot,
 } from '@angular/router';
@@ -10,7 +10,7 @@ import {AngularFireAuth} from 'angularfire2/auth';
 import 'rxjs/Rx';
 
 @Injectable()
-export class LoggedInGuard implements CanActivate {
+export class LoggedInGuard implements CanActivate, CanActivateChild {
     constructor(private router: Router, private afAuth: AngularFireAuth) {
     }
 
@@ -21,5 +21,9 @@ export class LoggedInGuard implements CanActivate {
             }
             return auth != null;
         }).first();
+    }
+
+    canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
+        return this.canActivate(route, state);
     }
 }
