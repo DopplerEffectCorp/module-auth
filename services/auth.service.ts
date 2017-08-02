@@ -21,6 +21,10 @@ export class AuthService {
         });
     }
 
+    get() {
+        return this.user;
+    }
+
     watchAuthState(callback) {
         this.afAuth.authState.subscribe((user) => {
             callback(user);
